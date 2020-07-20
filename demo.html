@@ -1,0 +1,95 @@
+<html>
+	<head></head>
+	<body></body>
+	<script >
+		var arr=['12','32','89','12','12','78','12','32'];
+       
+		function unique(arr){
+			 console.log(arr)
+			var temp=[];
+			for(var i=0;i<arr.length;i++){
+				if(temp.indexOf(arr[i]) ==-1){
+					temp.push(arr[i]);
+				}
+			}
+			console.log(temp,99)
+			return temp;
+		}
+		console.log(unique(arr));
+
+		console.log(arr.sort(),"sort");
+
+		function sum(num1,num2){
+			var num=num1+num2;
+			if(num2+1>100){
+                return num;
+			}else{
+				return sum(num,num2+1)
+			}
+
+
+		}
+		console.log(sum(1,2))
+
+		var arr2=['胡将','胡将','hujiang','胡将','胡江','hujiang'];
+
+		function count(arr){
+			var obj={};
+			arr.sort();
+			for(var i=0;i<arr.length;){
+				var cou=0;
+				for(var j=i;j<arr.length;j++){
+					if(arr[j]===arr[i]){
+						cou++;
+					}
+				}
+				obj[arr[i]]=cou;
+				i=i+cou;
+			}
+			return obj;
+		}
+		console.log(count(arr2))
+
+        var arr3=[1,[2,[[3,4],5],6]];
+        var res=[];
+       console.log( stringfiy(arr3));
+        function stringfiy(arr){
+        	
+        	for(var i=0;i<arr.length;i++){
+               if(typeof(arr[i])=='object'){
+               	stringfiy(arr[i]);
+               }else{
+               	res.push(arr[i]);
+               }
+        	}
+        	return res;
+        }
+
+function demo(){
+	let n=2;
+	if(true){
+		let n=1;
+		console.log(n)
+	}
+	
+
+}
+
+demo();
+
+
+const a={a:1,b:4};
+const b={b:2,c:3};
+var person={...a,...b};
+//Object.assign(person,a,b)
+console.log(person)
+
+
+
+
+
+
+
+
+	</script>
+</html>
